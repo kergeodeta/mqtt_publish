@@ -53,7 +53,7 @@ void loop() {
 void publish(char* topic, float data) {
   char payload[10];
   dtostrf(data, 2, 0, payload);
-  if(payload != "nan") {
+  if(strcmp(payload, "nan")) {
     pubSubClient.publish(topic, payload);
   }
 }
